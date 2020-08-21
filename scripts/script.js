@@ -7,4 +7,5 @@ const getBeers = async () => {
     return jsonresponse;
 }
 
+
 console.log(getBeers());
