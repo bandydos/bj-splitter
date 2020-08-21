@@ -63,6 +63,21 @@ var suits = ["Spades", "Hearts", "Diamonds", "Clubs"];
 var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 var deck = new Array();
 
+const makeDeck = () => {
+    deck = new Array();
+    for(var i = 0; i <values.length; i++){
+        var value = parseInt(values[i]);
+        if (values[i] == "J" || values[i] == "Q" || values[i] == "K"){
+            value =  10;
+        }
+        if(value[i] == "A"){
+            value = 11;
+        }
+        var card = {Value: values[i], Number : number}
+        deck.push(card);
+    }
+}
+
 const getBeers = async () => {
     const url = '../data/carddata.json';
     const response = await fetch(url);
