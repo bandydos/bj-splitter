@@ -1,10 +1,56 @@
-console.log('...');
+$(document).ready(() => {
+    console.log('ready');
+})
 
-const getBeers = async () => {
-    const url = '../data/carddata.json';
-    const response = await fetch(url);
-    const jsonresponse = await response.json();
-    return jsonresponse;
-}
-
-console.log(getBeers());
+const carddata = [{
+    "name": "Ace",
+    "value": 1
+},
+{
+    "name": "Two",
+    "value": 2
+},
+{
+    "name": "Three",
+    "value": 3
+},
+{
+    "name": "Four",
+    "value": 4
+},
+{
+    "name": "Five",
+    "value": 5
+},
+{
+    "name": "Six",
+    "value": 6
+},
+{
+    "name": "Seven",
+    "value": 7
+},
+{
+    "name": "Eight",
+    "value": 8
+},
+{
+    "name": "Nine",
+    "value": 9
+},
+{
+    "name": "Ten",
+    "value": 10
+},
+{
+    "name": "Jack",
+    "value": 10
+},
+{
+    "name": "Queen",
+    "value": 10
+},
+{
+    "name": "King",
+    "value": 10
+}];
