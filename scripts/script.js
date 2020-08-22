@@ -1,6 +1,12 @@
 $(document).ready(() => {
     $('#btn-generate').click(() => {
-        getCards();
+        // Needs some cleaning up.
+        console.log(getCards());
+        console.log(calcTotalValue(cards));
+        console.log(checkOutcome(calcTotalValue(cards)));
+        if (checkHit(calcTotalValue(cards)) == false) {
+            console.log('Stand at ' + calcTotalValue(cards) + '.');
+        }
     })
 })
 
@@ -55,7 +61,7 @@ const carddata = [{
 {
     "name": "King-Clubs",
     "value": 10
-},{
+}, {
     "name": "Ace-Spades",
     "value": 1
 },
@@ -106,7 +112,7 @@ const carddata = [{
 {
     "name": "King-Spades",
     "value": 10
-},{
+}, {
     "name": "Ace-Diamonds",
     "value": 1
 },
@@ -157,7 +163,7 @@ const carddata = [{
 {
     "name": "King-Diamonds",
     "value": 10
-},{
+}, {
     "name": "Ace-Hearts",
     "value": 1
 },
@@ -217,22 +223,63 @@ var deck = new Array();
 
 const makeDeck = () => {
     deck = new Array();
-    for(var i = 0; i <values.length; i++){
+    for (var i = 0; i < values.length; i++) {
         var number = parseInt(values[i]);
-        if (values[i] == "J" || values[i] == "Q" || values[i] == "K"){
-            number =  10;
+        if (values[i] == "J" || values[i] == "Q" || values[i] == "K") {
+            number = 10;
         }
-        if(value[i] == "A"){
+        if (values[i] == "A") {
             number = 11;
         }
-        var card = {Value: values[i], Number : number}
+        var card = { Value: values[i], Number: number }
         deck.push(card);
     }
 }
 
-const getCards = () => {
-    for(let i = 0; i < carddata.length; i++) {
-        console.log(carddata[i].name)
+var cards = [];
+
+const checkHit = (totalValue) => {
+    if ((totalValue < 15)) {
+        return true; // Hit when total < 15.
+    } else {
+        return false;
     }
 }
+
+
+const getCards = () => {
+    const hit = checkHit(calcTotalValue(cards));
+
+    if (hit) {
+        // Push when hit.
+        cards.push(carddata[Math.floor(Math.random() * carddata.length)])
+    }
+
+    return cards;
+}
+
+const calcTotalValue = (crds) => {
+    let totalValue = 0;
+
+    // Calculate total value.
+    for (let i = 0; i < crds.length; i++) {
+        totalValue += crds[i].value;
+    }
+
+    return totalValue;
+}
+
+const checkOutcome = (totalValue) => {
+    let outcome = "";
+
+    // Possible outcomes.
+    if (totalValue > 15 && totalValue < 21) outcome = 'G'; // Good hand.
+    else if (totalValue > 21) outcome = 'B'; // Bust.
+    else if (totalValue == 21) outcome = 'BJ'; // Blackjack.
+    else outcome = 'L'; // Low hand.
+
+    return outcome;
+}
+
+
 
