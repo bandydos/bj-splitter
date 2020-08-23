@@ -19,20 +19,65 @@
     </div>
 
     <div class="container">
-        <div class="row mt-5">
-            <button type="button" id="btn-generate" class="btn">start</button> 
+        <div class="row mt-5 text-center justify-content-around">
+            <div class="col-3">
+                <button type="button" id="btn-shuffle" class="btn border-dark form-control">shuffle</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="btn-hit" class="btn border-dark form-control">hit</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="btn-reset" class="btn border-dark form-control">reset</button>
+            </div>
+        </div>
+        <div class="row mt-5 text-center justify-content-around">
+            <div class="col-3">
+                <h3>T1</h3>
+                <table id="table-cards-1" class="table">
+                    <thead>
+                        <th>#</th>
+                        <th>CARD</th>
+                    </thead>
+                    <tbody id="tbody-cards-1"></tbody>
+                </table>
+                <h3 id="h-total-1"></h3>
+                <h4 id="h-outcome-1"></h4>
+                <h5 id="h-stand-1"></h5>
+            </div>
+            <div class="col-3">
+                <h3>T2</h3>
+                <table id="table-cards-2" class="table">
+                    <thead>
+                        <th>#</th>
+                        <th>CARD</th>
+                    </thead>
+                    <tbody id="tbody-cards-2"></tbody>
+                </table>
+                <h3 id="h-total-2"></h3>
+            </div>
+            <div class="col-3">
+                <h3>T3</h3>
+                <table id="table-cards-3" class="table">
+                    <thead>
+                        <th>#</th>
+                        <th>CARD</th>
+                    </thead>
+                    <tbody id="tbody-cards-3"></tbody>
+                </table>
+                <h3 id="h-total-3"></h3>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.0.js"
         integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous">
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
