@@ -330,6 +330,8 @@ const updateStand = (h, hit) => {
     }
 }
 
+// Random comment.
+
 // Control button displays.
 const displayControl = (type) => {
     if (type == 's') {
