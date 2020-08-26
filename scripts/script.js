@@ -56,13 +56,10 @@ const getCard = () => {
     const hit = checkHit(calcTotalValue(cards));
     const decks = generateDeck(4);
     
-
     if (hit) {
-        // Push when hit.
+        // Push into cards when hit.
         cards.push(decks[Math.floor(Math.random() * decks.length)])
     }
-
-    // return cards;
 }
 
 const checkHit = (totalValue) => {
@@ -131,8 +128,6 @@ const updateStand = (h, hit) => {
     }
 }
 
-// Random comment.
-
 // Control button displays.
 const displayControl = (type) => {
     if (type == 's') {
@@ -161,6 +156,3 @@ const displayControl = (type) => {
         $('#h-stand-1').hide();
     }
 }
-
-// Change in branch.
-
