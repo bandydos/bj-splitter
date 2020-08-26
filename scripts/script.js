@@ -3,10 +3,6 @@ $(document).ready(() => {
     $('#table-cards-2').hide();
     $('#table-cards-3').hide();
 
-    // const decks = generateDeck(5)
-    // console.log(decks)
-
-
     $('#btn-shuffle').click(() => {
         shuffle();
         displayControl('s');
