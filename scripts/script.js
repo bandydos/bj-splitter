@@ -10,8 +10,6 @@ $(document).ready(() => {
         updateTotal(cards, 'h-total-1');
         updateOutcome('h-outcome-1')
         updateStand('h-stand-1', checkHit(calcTotalValue(cards)));
-
-        console.log(generateDeck(2))
     })
     $('#btn-hit').click(() => {
         getCard();
@@ -48,8 +46,6 @@ const generateDeck = (amountOfDecks) => {
     return deck;
 }
 
-
-// random comment 
 var cards = [];
 
 const getCard = () => {
