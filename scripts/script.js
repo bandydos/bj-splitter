@@ -48,6 +48,8 @@ const generateDeck = (amountOfDecks) => {
     return deck;
 }
 
+
+// random comment 
 var cards = [];
 
 const getCard = () => {
